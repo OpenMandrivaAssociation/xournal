@@ -1,5 +1,5 @@
 %define name	xournal
-%define version	0.4
+%define version	0.4.0.1
 %define release %mkrel 1
 
 Name: 	 	%{name}
@@ -7,7 +7,7 @@ Summary: 	Pen-based journal applicaiton for GNOME
 Version: 	%{version}
 Release: 	%{release}
 
-Source:		%{name}-%{version}.tar.bz2
+Source:		http://heanet.dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.gz
 URL:		http://xournal.sourceforge.net/
 License:	GPL
 Group:		Office
@@ -43,7 +43,7 @@ Icon=%{name}
 Terminal=false
 Type=Application
 StartupNotify=true
-Categories=GNOME;GTK;Office;X-MandrivaLinux-Office-Other;
+Categories=GNOME;GTK;Office;
 EOF
 
 # icons
