@@ -1,5 +1,5 @@
 %define name	xournal
-%define version	0.4.0.1
+%define version	0.4.1
 %define release %mkrel 1
 
 Name: 	 	%{name}
