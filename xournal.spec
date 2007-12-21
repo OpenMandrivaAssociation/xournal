@@ -11,6 +11,7 @@ Source:		http://heanet.dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}
 URL:		http://xournal.sourceforge.net/
 License:	GPL
 Group:		Office
+BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	ImageMagick
 BuildRequires:	libgnomecanvas2-devel libgnomeprintui-devel
 
