@@ -1,9 +1,9 @@
 %define name	xournal
 %define version	0.4.1
-%define release %mkrel 1
+%define release %mkrel 2
 
 Name: 	 	%{name}
-Summary: 	Pen-based journal applicaiton for GNOME
+Summary: 	Pen-based journal and PDF annotator
 Version: 	%{version}
 Release: 	%{release}
 
@@ -36,7 +36,7 @@ rm -rf $RPM_BUILD_ROOT
 mkdir -p %{buildroot}%{_datadir}/applications
 cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 [Desktop Entry]
-Name=%name
+Name=Xournal
 Comment=%summary
 Exec=%{_bindir}/%{name} 
 Icon=%{name}
