@@ -1,6 +1,6 @@
 %define name	xournal
 %define version	0.4.2.1
-%define release %mkrel 2
+%define release %mkrel 3
 
 Name: 	 	%{name}
 Summary: 	Pen-based journal and PDF annotator
@@ -14,6 +14,8 @@ Group:		Office
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	ImageMagick
 BuildRequires:	libgnomecanvas2-devel libgnomeprintui-devel
+# For pdftoppm: see http://forum.mandriva.com/viewtopic.php?t=92135
+Requires:	poppler
 
 %description
 Xournal is an application for notetaking, sketching, keeping a journal using a
