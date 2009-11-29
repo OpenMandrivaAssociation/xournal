@@ -14,6 +14,7 @@ Group:		Office
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	imagemagick
 BuildRequires:	libgnomecanvas2-devel libgnomeprintui-devel
+BuildRequires:	libpoppler-glib-devel
 # For pdftoppm: see http://forum.mandriva.com/viewtopic.php?t=92135
 Requires:	poppler
 
