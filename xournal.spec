@@ -1,6 +1,6 @@
 %define name	xournal
-%define version	0.4.2.1
-%define release %mkrel 5
+%define version	0.4.5
+%define release %mkrel 1
 
 Name: 	 	%{name}
 Summary: 	Pen-based journal and PDF annotator
@@ -9,7 +9,7 @@ Release: 	%{release}
 
 Source:		http://heanet.dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.gz
 URL:		http://xournal.sourceforge.net/
-License:	GPL
+License:	GPLv2
 Group:		Office
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	imagemagick
@@ -31,7 +31,7 @@ such as Jarnal, Gournal, and NoteLab.
 %make
 										
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %makeinstall
 
 # menu
@@ -49,17 +49,17 @@ Categories=GNOME;GTK;Office;
 EOF
 
 # icons
-mkdir -p $RPM_BUILD_ROOT/%_liconsdir
-convert -size 48x48 pixmaps/%name.png $RPM_BUILD_ROOT/%_liconsdir/%name.png
-mkdir -p $RPM_BUILD_ROOT/%_iconsdir
-convert -size 32x32 pixmaps/%name.png $RPM_BUILD_ROOT/%_iconsdir/%name.png
-mkdir -p $RPM_BUILD_ROOT/%_miconsdir
-convert -size 16x16 pixmaps/%name.png $RPM_BUILD_ROOT/%_miconsdir/%name.png
+mkdir -p %{buildroot}%{_liconsdir}
+convert -size 48x48 pixmaps/%{name}.png %{buildroot}/%{_liconsdir}/%{name}.png
+mkdir -p %{buildroot}/%{_iconsdir}
+convert -size 32x32 pixmaps/%{name}.png %{buildroot}/%{_iconsdir}/%{name}.png
+mkdir -p %{buildroot}/%{_miconsdir}
+convert -size 16x16 pixmaps/%{name}.png %{buildroot}/%{_miconsdir}/%{name}.png
 
-%find_lang %name
+%find_lang %{name}
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %if %mdkversion < 200900
 %post
@@ -74,9 +74,9 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(-,root,root)
 %doc AUTHORS ChangeLog NEWS README html-doc/*
-%{_bindir}/%name
+%{_bindir}/%{name}
 %{_datadir}/applications/*
-%{_datadir}/%name
-%{_liconsdir}/%name.png
-%{_iconsdir}/%name.png
-%{_miconsdir}/%name.png
+%{_datadir}/%{name}
+%{_liconsdir}/%{name}.png
+%{_iconsdir}/%{name}.png
+%{_miconsdir}/%{name}.png
