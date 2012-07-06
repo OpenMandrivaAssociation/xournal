@@ -1,19 +1,18 @@
 %define name	xournal
-%define version	0.4.5
-%define release %mkrel 2
+%define version	0.4.7
+%define release 1
 
 Name: 	 	%{name}
 Summary: 	Pen-based journal and PDF annotator
 Version: 	%{version}
 Release: 	%{release}
 
-Source:		http://heanet.dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.gz
+Source0:	http://heanet.dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.gz
 URL:		http://xournal.sourceforge.net/
 License:	GPLv2
 Group:		Office
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	imagemagick
-BuildRequires:	libgnomecanvas2-devel libgnomeprintui-devel
+BuildRequires:	pkgconfig(libgnomecanvas-2.0)
 BuildRequires:	libpoppler-glib-devel
 # For pdftoppm: see http://forum.mandriva.com/viewtopic.php?t=92135
 Requires:	poppler
@@ -59,21 +58,7 @@ convert -size 16x16 pixmaps/%{name}.png %{buildroot}/%{_miconsdir}/%{name}.png
 
 %find_lang %{name}
 
-%clean
-rm -rf %{buildroot}
-
-%if %mdkversion < 200900
-%post
-%update_menus
-%endif
-		
-%if %mdkversion < 200900
-%postun
-%clean_menus
-%endif
-
 %files -f %{name}.lang
-%defattr(-,root,root)
 %doc AUTHORS ChangeLog NEWS README html-doc/*
 %{_bindir}/%{name}
 %{_datadir}/applications/*
