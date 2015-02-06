@@ -1,6 +1,6 @@
 %define name	xournal
 %define version	0.4.7
-%define release 1
+%define release 2
 
 Name: 	 	%{name}
 Summary: 	Pen-based journal and PDF annotator
