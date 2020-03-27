@@ -1,6 +1,6 @@
 Name: 	 	xournal
 Summary: 	Pen-based journal and PDF annotator
-Version: 	0.4.8
+Version: 	0.4.8.2016
 Release: 	1
 
 Source0:	http://heanet.dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.gz
@@ -9,6 +9,9 @@ License:	GPLv2
 Group:		Office
 BuildRequires:	imagemagick
 BuildRequires:	pkgconfig(libgnomecanvas-2.0)
+BuildRequires: pkgconfig(freetype2)
+BuildRequires: pkgconfig(gtk+-2.0)
+BuildRequires: pkgconfig(x11)
 BuildRequires:	pkgconfig(poppler-glib)
 # For pdftoppm: see http://forum.mandriva.com/viewtopic.php?t=92135
 Requires:	poppler
@@ -22,11 +25,11 @@ such as Jarnal, Gournal, and NoteLab.
 %setup -q
 
 %build
-%configure2_5x
-%make
+%configure
+%make_build
 										
 %install
-%makeinstall
+%make_install
 
 # menu
 mkdir -p %{buildroot}%{_datadir}/applications
