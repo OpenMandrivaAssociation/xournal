@@ -4,7 +4,7 @@ Version: 	0.4.8.2016
 Release: 	1
 
 Source0:	http://heanet.dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.gz
-URL:		http://xournal.sourceforge.net/
+URL:		https://xournal.sourceforge.net/
 License:	GPLv2
 Group:		Office
 BuildRequires:	imagemagick
