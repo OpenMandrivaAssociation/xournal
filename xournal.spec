@@ -7,6 +7,11 @@ Source0:	http://heanet.dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}
 URL:		https://xournal.sourceforge.net/
 License:	GPLv2
 Group:		Office
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	imagemagick
 BuildRequires:	pkgconfig(libgnomecanvas-2.0)
 BuildRequires: pkgconfig(freetype2)
